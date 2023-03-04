@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway:wght@500&family=Tilt+Prism&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Labrada:ital,wght@1,300&family=Poppins&family=Raleway:wght@500&family=Source+Sans+Pro&family=Tilt+Prism&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+    right: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Serif', serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+
+h3 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: orange;
+}
+
+p {
+    color: orange;
+}
+
+button {
+    font-size: 1.3rem;
+    margin-top: 30px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    background-color: skyblue;
+    color: white;
+    border: none;
+}
+
+@media screen and (max-width:930px) {
+    .img {
+        width: auto;
+    }
+
+    h3 {
+        font-size: auto;
+    }
+}

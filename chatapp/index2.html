@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CHAT-APP</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- adding css file -->
+    <link rel="stylesheet" href="./public/style/index.css">
+
+    <!-- adding google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bangers&family=Bree+Serif&family=Libre+Baskerville&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bangers&family=Bree+Serif&family=EB+Garamond:wght@500&family=Libre+Baskerville&family=Shantell+Sans:wght@500&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <main>
+        <!-- create header -->
+        <header>
+
+            <div class="title">
+
+                <img src="./public/icons/logo6.jpg" width="45px" height="45px">
+                <h1>CHIT-CHAT</h1>
+
+            </div>
+
+            <button type="button" class="header_button" onclick="show_hide()">
+
+                <img src="./public/icons/bird.svg" width="40px" height="40px">
+
+            </button>
+
+        </header>
+
+        <!-- show name of all the friends -->
+
+        <div class="container">
+
+            <div class="users-window">
+
+                <div class="users-head">
+
+                    <h3>Active People</h3>
+                    <h4 class="users-count"></h4>
+
+                </div>
+
+                <div class="users-list">
+
+
+                </div>
+
+            </div>
+
+            <!-- chat box -->
+
+            <div class="chat-window">
+
+                <div class="chats">
+
+
+                </div>
+
+                <!-- message sender -->
+
+                <div class="user-input">
+                    <input id="user-msg" type="text" placeholder="Type your message...">
+                    <button id="user-send" type="button">SEND</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- using js -->
+
+    <script>
+
+        var uwindow = document.querySelector('.users-window');
+
+        function show_hide() {
+            if (uwindow.style.display == "none") {
+                uwindow.style.display = "block";
+            }
+            else {
+                uwindow.style.display = "none";
+            }
+        }
+
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./public/js/client.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway:wght@500&family=Source+Sans+Pro&family=Tilt+Prism&display=swap');
+
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+body {
+  background: url('../icons/w5.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.container {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px 0 15px;
+}
+
+
+header {
+  color: white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 10px 0;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  height: 45px;
+  width: 87%;
+  font-size: large;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  color: white;
+  padding: 0 0 0 45px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+ion-icon {
+  position: relative;
+  top: -32px;
+  font-size: large;
+  left: 17px;
+  color: white;
+}
+
+::-webkit-input-placeholder {
+  color: #fff;
+
+}
+
+.submit {
+  border: none;
+  font-size: large;
+  border-radius: 30px;
+  padding-right: 40px;
+  height: 45px;
+  outline: none;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.submit:hover {
+  box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+.login_form #email_error,
+.login_form #pass_error{
+  margin-top: 5px;
+  width: 87%;
+  font-size: 18px;
+  color: #C62828;
+  background: rgba(255,0,0,0);
+  text-align: center;
+  padding: 5px 8px;
+  border-radius: 3px ;
+  border: 1px solid #EF9A9A;
+  display: none;
+}

@@ -1,0 +1,307 @@
+// using SASS
+$dark-blue: #07689F;
+$blue-white: #FAFAFA;
+$light-blue: #A2D5F2;
+$white: white;
+$font-text: 'Shantell Sans', cursive;
+$font-heading: 'Source Sans Pro', sans-serif;
+$fsize: 16px;
+
+// using mixins
+@mixin flexing($fd, $jc, $ai) {
+    display: flex;
+    // assigning the variables so that we can change the value in future
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-text;
+
+
+    * ::-webkit-scrollbar {
+        display: none;
+    }
+
+}
+
+// add background image
+body {
+
+    background: url("../icons/c1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    overflow: hidden;
+    border-radius: 10px;
+
+    // header 
+    header {
+
+        background-color: $dark-blue;
+        opacity: 0.9;
+        // background: transparent;
+        color: $white;
+        cursor: pointer;
+        padding: 7px 20px;
+
+        @include flexing(row, space-between, center); // calling the mixin
+
+        div.title {
+
+            @include flexing(row, flex-start, center); // calling the mixin
+
+            // using nesting rule
+            h1 {
+
+                font-family: $font-heading;
+                font-size: 32px;
+                margin-left: 10px;
+                color: white;
+            }
+
+            img {
+
+                border-radius: 50%;
+                box-shadow: 0px 0px 10px;
+            }
+        }
+
+        button {
+
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+            // using nesting rule
+            img {
+                border-radius: 50%;
+            }
+        }
+    }
+
+    div.container {
+
+        background: transparent;
+        padding: 20px;
+        @include flexing(row, flex-start, stretch); // calling the mixin
+
+
+        // show box of name of friends
+        div.users-window {
+
+            width: 350px;
+            color: $white;
+            background-color: $light-blue;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-right: 20px;
+            opacity: 0.5;
+
+            div.users-head {
+
+                @include flexing(row, space-between, centre); // calling the mixin
+                margin-bottom: 15px;
+
+                h4 {
+
+                    background-color: $dark-blue;
+                    padding: 0px 8px;
+                    border-radius: 10px;
+                    cursor: pointer;
+
+                }
+
+                h3 {
+
+                    color: black;
+                }
+
+            }
+
+            div.users-list p {
+
+                font-size: $fsize;
+                font-weight: 500;
+                margin-bottom: 15px;
+                color: black;
+            }
+
+            div.users-list p:hover {
+
+                color: $dark-blue;
+                cursor: pointer;
+            }
+
+        }
+
+        //show chats box
+        div.chat-window {
+
+            width: 100%;
+            border-radius: 10px;
+            background-color: $light-blue;
+            opacity: 0.9;
+
+            // using nesting rule
+            div.chats {
+
+                height: 65vh;
+                padding: 20px;
+                overflow-y: auto;
+
+                //show joined user
+                div.user-join {
+
+                    font-size: 0.9rem;
+                    color: white;
+                    background-color: $dark-blue;
+                    border-radius: 50px;
+                    width: max-content;
+                    margin: 0 auto;
+                    padding: 7px 20px;
+                    margin-bottom: 15px;
+
+                }
+
+                // incoming message 
+                div.message {
+
+                    color: $dark-blue;
+                    background-color: $white;
+                    padding: 5px 15px;
+                    max-width: 400px;
+                    margin-bottom: 15px;
+                    border-radius: 10px 50px 50px 10px;
+
+                    p {
+
+                        font-size: $fsize;
+                    }
+
+                }
+
+                //outgoing message
+                div.outgoing {
+
+                    margin-left: auto;
+                    color: $white;
+                    background-color: $dark-blue;
+                    border-radius: 50px 10px 10px 50px;
+                    text-align: right;
+                }
+
+            }
+
+            // message sender input box
+            div.user-input {
+                @include flexing(row, space-between, stretch); // calling the mixin
+                padding: 20px;
+
+                input {
+
+                    font-size: $fsize;
+                    background-color: $white;
+                    padding: 10px 20px;
+                    outline: none;
+
+                    border: none;
+                    border-radius: 50px 0px 0px 50px;
+                    width: 100%;
+                }
+
+                button {
+
+                    font-size: $fsize;
+                    font-weight: 600;
+                    padding: 5px 15px;
+                    border: none;
+                    outline: none;
+                    letter-spacing: 0.5px;
+                    color: $white;
+                    background-color: $dark-blue;
+                    border-radius: 0 50px 50px 0px;
+                    cursor: pointer;
+
+                }
+            }
+        }
+    }
+}
+
+// hover effect on the button
+.header_button:hover {
+
+    transform: scale(0.8);
+}
+
+.user-input #user-msg {
+    opacity: 0.9;
+    z-index: 1000;
+}
+
+
+// add media query 
+
+
+@media screen and (max-width:900px) {
+
+    main {
+
+        width: 95%;
+
+        header {
+
+            button {
+
+                display: block;
+            }
+        }
+
+        div.container {
+
+            position: relative;
+
+            div.users-window {
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                border-radius: 0 0 10px 10px;
+                height: max-content;
+                z-index: 11;
+                box-shadow: 0 15px 20px -20px black;
+                padding-bottom: 0;
+                display: none;
+            }
+
+            div.chat-window {
+
+                div.chats {
+
+                    div.message {
+
+                        min-width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
